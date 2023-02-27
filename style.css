@@ -1,0 +1,312 @@
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+    font-size: 62.5%;
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+/* My CSS */
+
+:root {
+    --experience-svg-width: 150px;
+    --section-gap: 30em;
+
+    --paragraph-font-size: 2.5rem;
+    --heading-font-size: 5rem;
+    --footer-font-size: 1.5rem;
+
+    --main-color: #8e8e8e;
+    --accent-color: #7EA162;
+}
+
+body {
+    font-family: 'Montserrat';
+    background-color: #e2e8df;
+}
+
+h1 {
+    display: inline-block;
+    word-spacing: 100vw;
+}
+
+.wrapper {
+    width: 85%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5em 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10em;
+}
+
+.logo svg {
+    width: 250px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4.1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    position: relative;
+}
+
+nav a.active:before {
+    position: absolute;
+    content: '';
+    width: 45%;
+    height: 2px;
+    background-color: var(--accent-color);
+    bottom: -5px;
+}
+
+/* Hero Section */
+.image-container {
+    background-image: url("Images/Background_Image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 8rem;
+    color: white;
+    filter: brightness(400%);
+    padding: 0.8em;
+}
+
+/* GOAL SECTION  */
+
+.goal {
+    margin: var(--section-gap) 0em;
+}
+
+.goal-heading{
+    font-size: var(--heading-font-size);
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    margin-bottom: 0.7em;
+}
+
+.goal-description {
+    color: var(--main-color);
+    font-size: var(--paragraph-font-size);
+    line-height: 1.8em;
+}
+
+/* MESSAGE SECTION */
+
+.message {
+    display: flex;
+    gap: 15em;
+    margin-bottom: var(--section-gap);
+}
+
+.message-right-col {
+    margin-top: var(--section-gap);
+    
+}
+
+.message-heading {
+    font-size: var(--heading-font-size);
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 400;
+    margin-bottom: 0.7em;
+}
+
+.message-heading:before {
+    content: '';
+    width: 89%;
+    height: 103%;
+    background-color: var(--accent-color);
+    position: absolute;
+    z-index: -1;
+    left: -3%;
+}
+
+.message-description {
+    color: var(--main-color);
+    font-size: var(--paragraph-font-size);
+}
+
+.message-left-col {
+    position: relative;
+}
+
+.message-left-col svg{
+    position: absolute;
+    top: 0;
+    right: calc(20px - var(--experience-svg-width));
+    width: var(--experience-svg-width);
+}
+
+.message-image {
+    width: 2000px;
+}
+
+/* LAST SECTION */
+
+.last-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 10em;
+}
+
+.results {
+    position: relative;
+}
+
+.results::before {
+    content: 'Brilliant Results';
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    z-index: 10;
+}
+
+.last-description {
+    font-size: var(--paragraph-font-size);
+    color: var(--main-color);
+    text-align: center;
+}
+
+span {
+    position: relative;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    height: 2.5px;
+    width: 100%;
+    background-color: var(--accent-color);
+    bottom: -2.5px;
+}
+
+.last {
+    margin-bottom: var(--section-gap);
+}
+
+/* FOOTER SECTION */
+
+footer {
+    background-color: #EBEBE1;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-right-col, .footer-left-col {
+    padding: 20em 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+footer button {
+    font-size: 2.5rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    margin-bottom: 1em;
+}
+
+footer p {
+    font-size: var(--footer-font-size);
+    color: var(--main-color);
+}
+
+footer p:hover {
+    cursor: pointer;
+}
+
+footer svg {
+    width: 32px;
+    height: 32px;
+}
+
+footer svg:hover {
+    cursor: pointer;
+}
+
+.line {
+    width: 2px;
+    height: inherit;
+    background-color: var(--accent-color);
+}
