@@ -56,7 +56,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
     --experience-svg-width: 150px;
-    --section-gap: 30em;
+    --section-gap: 40em;
+    --padding-side: 15em;
 
     --paragraph-font-size: 2.5rem;
     --heading-font-size: 5rem;
@@ -68,7 +69,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 body {
     font-family: 'Montserrat';
-    background-color: #e2e8df;
+    background-color: #e8eae8;
 }
 
 h1 {
@@ -77,8 +78,6 @@ h1 {
 }
 
 .wrapper {
-    width: 85%;
-    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -88,7 +87,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5em 0;
+    margin: 5em var(--padding-side);
 }
 
 .logo {
@@ -110,11 +109,11 @@ nav ul {
 nav a {
     text-decoration: none;
     color: var(--main-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     position: relative;
 }
 
-nav a.active:before {
+nav a.active-menu:before {
     position: absolute;
     content: '';
     width: 45%;
@@ -133,7 +132,7 @@ nav a.active:before {
 }
 
 h1 {
-    font-size: 8rem;
+    font-size: 8.5rem;
     color: white;
     filter: brightness(400%);
     padding: 0.8em;
@@ -142,7 +141,7 @@ h1 {
 /* GOAL SECTION  */
 
 .goal {
-    margin: var(--section-gap) 0em;
+    margin: var(--section-gap) var(--padding-side);
 }
 
 .goal-heading{
@@ -165,11 +164,11 @@ h1 {
     display: flex;
     gap: 15em;
     margin-bottom: var(--section-gap);
+    margin-right: var(--padding-side);
 }
 
 .message-right-col {
     margin-top: var(--section-gap);
-    
 }
 
 .message-heading {
@@ -183,7 +182,7 @@ h1 {
 
 .message-heading:before {
     content: '';
-    width: 89%;
+    width: 105%;
     height: 103%;
     background-color: var(--accent-color);
     position: absolute;
@@ -213,6 +212,10 @@ h1 {
 
 /* LAST SECTION */
 
+.last {
+    padding: 0em var(--padding-side);
+}
+
 .last-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -221,6 +224,7 @@ h1 {
 
 .results {
     position: relative;
+    height: 100%;
 }
 
 .results::before {
@@ -235,6 +239,7 @@ h1 {
     font-size: var(--paragraph-font-size);
     color: var(--main-color);
     text-align: center;
+    margin-top: 5em;
 }
 
 span {
@@ -280,7 +285,7 @@ footer {
 }
 
 footer button {
-    font-size: 2.5rem;
+    font-size: 3rem;
     border: none;
     background-color: var(--accent-color);
     color: white;
@@ -310,3 +315,288 @@ footer svg:hover {
     height: inherit;
     background-color: var(--accent-color);
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1000px) {
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+    }
+
+    .goal {
+        margin: 25em 8em;
+    }
+
+    .goal-heading {
+        font-size: 3rem;
+    }
+
+    .goal-description {
+        font-size: 1.8rem;
+    }
+
+    .message {
+        margin-bottom: 25em;
+    }
+
+    .message-heading {
+        font-size: 3rem;
+    }
+
+    .message-description {
+        font-size: 1.8rem;
+    }
+
+    .message-right-col {
+        margin-top: 15em;
+    }
+
+    .message-image {
+        width: 200em;
+    }
+
+    .XP {
+        width: 125px;
+        height: 125px;
+        z-index: -1;
+    }
+
+    .last {
+        margin-bottom: 25em;
+    }
+
+    .last-description {
+        font-size: 1.8rem;
+    }
+
+    footer {
+        display: grid;
+        grid-template-areas: 'left right';
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-right-col {
+        grid-area: right;
+        position: relative;
+    }
+
+    .footer-right-col::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: #7EA162;
+        left: 0;
+    }
+
+    .footer-left-col {
+        grid-area: left;
+    }
+
+    footer p {
+        font-size: 1.2rem;
+    }
+
+    footer button {
+        font-size: 2rem;
+    }
+
+    .footer-right-col, .footer-left-col {
+        padding: 10em 6em;
+    }
+}
+
+header {
+    position: relative;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 4em;
+    right: 3em;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    * {
+        overflow-x: hidden;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a.active-menu:before {
+        position: absolute;
+        content: '';
+        width: 0%;
+        height: 0px;
+        background-color: var(--accent-color);
+        bottom: -2px;
+    }
+
+    nav ul{
+        width: 87.5%;
+        flex-direction: column;
+        margin-bottom: 1.3em;
+    }
+
+    nav li {
+        text-align: center;
+    }
+
+    nav li a {
+        font-size: 1.4rem;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 3.8rem;
+    }
+
+    header {
+        margin: 2em 2em;
+    }
+
+    .logo-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .goal {
+        margin: 15em 8em;
+    }
+
+    .goal-heading {
+        font-size: 2rem;
+    }
+
+    .goal-description {
+        font-size: 1.3rem;
+    }
+
+    .message {
+        margin-bottom: 15em;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .message-heading {
+        font-size: 1.8rem;
+        margin-left: 2em;
+    }
+
+    .message-description {
+        margin-left: 2.8em;
+        font-size: 1.3rem;
+    }
+
+    .message-right-col {
+        margin-top: 10em;
+    }
+
+    .message-left-col {
+        position: relative;
+    }
+
+    .message-image {
+        width: 100em;
+        padding-left: 4em;
+    }
+
+    .message-heading:before{
+        width: 105%;
+        height: 100%;
+    }
+
+    .XP {
+        display: none;
+    }
+
+    .last {
+        flex-direction: column;
+        margin-bottom: 15em;
+        padding: 0 5em;
+    }
+
+    .last-images {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .last-description {
+        font-size: 1.3rem;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-right-col::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #7EA162;
+        top: 0;
+    }
+
+    .footer-right-col, .footer-left-col {
+        gap: 3.5em;
+        padding: 5.5em;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    footer button {
+        font-size: 1.5rem;
+    }
+
+    footer svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .flex {
+        gap: 0.5em;
+    }
+
+    span::before {
+        height: 1.5px;
+    }
+}
+   

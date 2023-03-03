@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Science School</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 
     <!-- Importing Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +19,17 @@
 
         <header>
             <div class="logo">
-                <a href="#"><img src="Design/Logo.svg" alt="Logo"></a>
+                <a href="#"><img class="logo-icon" src="Design/Logo.svg" alt="Logo"></a>
             </div>
+
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
             <nav>
                 <ul>
-                    <li><a class="active" href="#">HOME</a></li>
+                    <li><a class="active-menu" href="#">HOME</a></li>
                     <li><a href="https://thescienceschool.edu.pk/tsswp/education/parents-and-students/">EDUCATION</a></li>
                     <li><a href="https://thescienceschool.edu.pk/tsswp/results/">RESULTS</a></li>
                     <li><a href="https://thescienceschool.edu.pk/tsswp/gallery/">GALLERY</a></li>
@@ -32,7 +39,6 @@
 
         <main>
             <section class="image-container">
-                <!-- <a href="#"><img src="Images/Background_Image.jpg" alt="Image of the school building"></a> -->
                 <h1>FAITH PURPOSE ACTION LEADERSHIP</h1>
             </section>
             
@@ -45,7 +51,7 @@
             <section class="message">
                 <div class="message-left-col">
                     <img class="message-image" src="Images/2.jpg" alt="Students studying">
-                    <svg viewBox="0 0 181 181" fill="none">
+                    <svg class="XP" viewBox="0 0 181 181" fill="none">
                         <circle cx="90.5" cy="90.5" r="89.5" stroke="#787878" stroke-width="2"/>
                         <path d="M70.085 54.11V51.905H76.035V77H73.55V54.11H70.085ZM82.8947 64.225C82.8947 60.2117 83.5131 57.0967 84.7497 54.88C85.9864 52.6633 88.2031 51.555 91.3997 51.555C94.5964 51.555 96.8131 52.6633 98.0497 54.88C99.2864 57.0967 99.9047 60.2117 99.9047 64.225C99.9047 68.3083 99.2864 71.47 98.0497 73.71C96.8131 75.95 94.5964 77.07 91.3997 77.07C88.1797 77.07 85.9514 75.95 84.7147 73.71C83.5014 71.47 82.8947 68.3083 82.8947 64.225ZM97.4897 64.225C97.4897 62.055 97.3381 60.2233 97.0347 58.73C96.7314 57.2367 96.1364 56.035 95.2497 55.125C94.3631 54.215 93.0797 53.76 91.3997 53.76C89.7197 53.76 88.4364 54.215 87.5497 55.125C86.6631 56.035 86.0681 57.2367 85.7647 58.73C85.4614 60.2233 85.3097 62.055 85.3097 64.225C85.3097 66.465 85.4614 68.3433 85.7647 69.86C86.0681 71.3533 86.6631 72.555 87.5497 73.465C88.4364 74.375 89.7197 74.83 91.3997 74.83C93.0797 74.83 94.3631 74.375 95.2497 73.465C96.1364 72.555 96.7314 71.3533 97.0347 69.86C97.3381 68.3433 97.4897 66.465 97.4897 64.225Z" fill="#626262"/>
                         <line x1="46.28" y1="89" x2="134.72" y2="89" stroke="#7EA162" stroke-width="3"/>
@@ -61,8 +67,8 @@
 
             <section class="last">
                 <div class="last-images">
-                    <img class="results" src="Images/3.jpg" alt="">
-                    <img src="Images/4.jpg" alt="">
+                    <img src="Images/3.jpg" alt="">
+                    <img class="results" src="Images/4.jpg" alt="">
                 </div>
                 <p class="last-description">
                     It is the first school of its kind in Pakistan, with a special focus on <span>high standards</span> learning in science, mathematics, engineering and technology. Learning activity is integrated with the social sciences, humanities, and outdoor education.
